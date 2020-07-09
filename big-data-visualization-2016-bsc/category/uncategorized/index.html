@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Uncategorized | Big Data Visualization</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="http://espinosa-oviedo.com/big-data-visualization-2016-bsc/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://espinosa-oviedo.com/big-data-visualization-2016-bsc/wp-content/themes/twentytwelve/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel='dns-prefetch' href='http://secure.gravatar.com/' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Big Data Visualization &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Big Data Visualization &raquo; Comments Feed" href="../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Big Data Visualization &raquo; Uncategorized Category Feed" href="feed/index.html" />
+<!-- This site uses the Google Analytics by ExactMetrics plugin v6.0.2 - Using Analytics tracking - https://www.exactmetrics.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var em_version         = '6.0.2';
+	var em_track_user      = true;
+	var em_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-118956641-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+
+	if ( 'undefined' === typeof gaOptout ) {
+		function gaOptout() {
+			__gaTrackerOptout();
+		}
+	}
+	
+	if ( em_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+window.ga = __gaTracker;		__gaTracker('create', 'UA-118956641-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('send','pageview');
+		__gaTracker( function() { window.ga = __gaTracker; } );
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + em_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+			window.ga = __gaTracker;		})();
+		}
+</script>
+<!-- / Google Analytics by ExactMetrics -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/espinosa-oviedo.com\/big-data-visualization-2016-bsc\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.4"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='../../wp-includes/css/dist/block-library/style.min.css%3Fver=5.3.4.css' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='wp-block-library-theme-css'  href='../../wp-includes/css/dist/block-library/theme.min.css%3Fver=5.3.4.css' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-style-css'  href='../../wp-content/themes/twentytwelve/style.css%3Fver=5.3.4.css' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-block-style-css'  href='../../wp-content/themes/twentytwelve/css/blocks.css%3Fver=20181230.css' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='http://espinosa-oviedo.com/big-data-visualization-2016-bsc/wp-content/themes/twentytwelve/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='bt_2017-css'  href='../../wp-content/plugins/customize-twenty-seventeen/style.css%3Fver=5.3.4.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='../../wp-content/plugins/jetpack/css/jetpack.css%3Fver=8.3.css' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"zip,mp3,mpeg,pdf,docx,pptx,xlsx,rar","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"http:\/\/espinosa-oviedo.com\/big-data-visualization-2016-bsc","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/google-analytics-dashboard-for-wp/assets/js/frontend.min.js%3Fver=6.0.2'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery.js%3Fver=1.12.4-wp'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min.js%3Fver=1.4.1'></script>
+<script type='text/javascript' src='../../wp-content/plugins/customize-twenty-seventeen/script.js%3Fver=5.3.4'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc.php%3Frsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.3.4" />
+
+<link rel='dns-prefetch' href='http://v0.wordpress.com/'/>
+<style type='text/css'>img#wpstats{display:none}</style>
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Uncategorized &#8211; Big Data Visualization" />
+<meta property="og:url" content="http://espinosa-oviedo.com/big-data-visualization-2016-bsc/category/uncategorized/" />
+<meta property="og:site_name" content="Big Data Visualization" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:locale" content="en_US" />
+
+<!-- End Jetpack Open Graph Tags -->
+</head>
+
+<body class="archive category category-uncategorized category-1 wp-embed-responsive custom-font-enabled single-author">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+		<hgroup>
+			<h1 class="site-title"><a href="../../../big-data-visualization-2016-bsc.html" title="Big Data Visualization" rel="home">Big Data Visualization</a></h1>
+			<h2 class="site-description">Tools and techniques for exploring data</h2>
+		</hgroup>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle">Menu</button>
+			<a class="assistive-text" href="index.html#content" title="Skip to content">Skip to content</a>
+			<div class="menu-menu-container"><ul id="menu-menu" class="nav-menu"><li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-13"><a href="../../../big-data-visualization-2016-bsc.html">Description</a></li>
+<li id="menu-item-225" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-225"><a href="../../objectives/index.html">Objectives</a></li>
+<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a href="../../content/index.html">Content</a></li>
+<li id="menu-item-158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-158"><a href="../../hands-on/index.html">Hands On</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12"><a href="../../bibliography/index.html">Bibliography</a></li>
+</ul></div>		</nav><!-- #site-navigation -->
+
+			</header><!-- #masthead -->
+
+	<div id="main" class="wrapper">
+
+	<section id="primary" class="site-content">
+		<div id="content" role="main">
+
+					<header class="archive-header">
+				<h1 class="archive-title">Category Archives: <span>Uncategorized</span></h1>
+
+						</header><!-- .archive-header -->
+
+			
+	<article id="post-197" class="post-197 post type-post status-publish format-standard hentry category-uncategorized">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="../../2016/05/05/script/index.html" rel="bookmark">Script</a>
+			</h1>
+								</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>##################################################<br />
+## Developer Tools<br />
+##################################################</p>
+<p>sudo apt-get install -y ssh build-essential git openjdk-7-jdk</p>
+<p>##################################################<br />
+## Lightning-Server<br />
+##################################################<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Docker-Engine: install<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+sudo apt-get update<br />
+sudo apt-get install apt-transport-https ca-certificates</p>
+<p>sudo apt-key adv &#8211;keyserver hkp://p80.pool.sks-keyservers.net:80 &#8211;recv-keys 58118E89F3A912897C070ADBF76221572C52609D<br />
+echo &#8220;deb https://apt.dockerproject.org/repo ubuntu-trusty main&#8221; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</p>
+<p>sudo apt-get update<br />
+sudo apt-get install -y docker-engine<br />
+sudo apt-get -y autoremove</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Docker-Engine: config &amp; test<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+sudo usermod -aG docker $(whoami)<br />
+sudo docker run hello-world</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Lightning: install<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+sudo docker run -i -t -p 3000:3000 lightningviz/lightning:latest</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Lightning: config run-script<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+echo &#8216;#!/bin/bash&#8217; | sudo tee -a /usr/local/bin/lightning-server &gt; /dev/null<br />
+echo &#8220;docker run -i -t -p 3000:3000 lightningviz/lightning:latest&#8221; | sudo tee -a /usr/local/bin/lightning-server &gt; /dev/null</p>
+<p>sudo chmod +x /usr/local/bin/lightning-server</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Reboot (needed for running docker without sudo)<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+sudo reboot</p>
+<p>##################################################<br />
+## Rapidminer (manual install)<br />
+##################################################</p>
+<p># Download from https://rapidminer.com</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Install (assumes rapidminer-studio is in current directory)<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+sudo mv rapidminer-studio /usr/local/rapidminer-studio</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Config<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+echo &#8216;#!/bin/bash&#8217; | sudo tee -a /usr/local/bin/rapidminer-studio &gt; /dev/null<br />
+echo &#8216;export RAPIDMINER_HOME=/usr/local/rapidminer-studio/&#8217; | sudo tee -a /usr/local/bin/rapidminer-studio &gt; /dev/null<br />
+echo &#8216;/usr/local/rapidminer-studio/RapidMiner-Studio.sh&#8217; | sudo tee -a /usr/local/bin/rapidminer-studio &gt; /dev/null</p>
+<p>sudo chmod +x /usr/local/bin/rapidminer-studio<br />
+##################################################<br />
+## NoSQL Databases<br />
+##################################################<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; MongoDB<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>sudo apt-key adv &#8211;keyserver hkp://keyserver.ubuntu.com:80 &#8211;recv EA312927<br />
+echo &#8220;deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse&#8221; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list<br />
+sudo apt-get update<br />
+sudo apt-get install -y mongodb-org</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; CouchDB<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>sudo apt-get update<br />
+sudo apt-get install software-properties-common -y<br />
+sudo add-apt-repository ppa:couchdb/stable -y<br />
+sudo apt-get update<br />
+sudo apt-get install couchdb -y<br />
+curl localhost:5984</p>
+<p># CouchDB Client 4 Python<br />
+pip install couchdb</p>
+<p>##################################################<br />
+## Pig Latin<br />
+##################################################</p>
+<p># Download from http://pig.apache.org/releases.html</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Install (assumes tar is in current directory)<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>tar -xvf pig-* &amp;&amp; rm pig-*.tar*<br />
+sudo mkdir /usr/local/apache/<br />
+sudo mv pig-* /usr/local/apache/pig</p>
+<p>printf &#8220;\n\n&#8221; | tee -a ~/.bashrc &gt; /dev/null<br />
+echo &#8216;# Apache Pig Latin&#8217; | tee -a ~/.bashrc &gt; /dev/null<br />
+echo &#8216;export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64/&#8217; | tee -a ~/.bashrc &gt; /dev/null<br />
+echo &#8216;export PIG_HOME=/usr/local/apache/pig&#8217; | tee -a ~/.bashrc &gt; /dev/null<br />
+echo &#8216;export PATH=$PATH:$PIG_HOME/bin&#8217; | tee -a ~/.bashrc &gt; /dev/null</p>
+<p>source ~/.bashrc</p>
+<p>##################################################<br />
+## Anaconda<br />
+##################################################</p>
+<p># Download from https://www.continuum.io/downloads<br />
+# &amp; follow instructions</p>
+<p># when installed on different folder<br />
+chmod -R 777 /usr/local/anaconda2/</p>
+<p>##################################################<br />
+## Cesium JS<br />
+##################################################</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Node<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash &#8211;<br />
+sudo apt-get install -y nodejs npm</p>
+<p>sudo ln -s /usr/bin/nodejs /usr/local/bin/node<br />
+sudo ln -s /usr/bin/npm /usr/local/bin/npm<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Cesium &amp; Express<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+npm install cesium<br />
+npm install express compression request yargs<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Google Chrome<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p># Manual install: https://www.google.com/chrome/browser/desktop/<br />
+##################################################<br />
+## VM Customization<br />
+##################################################</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Big Data Analytics (bda) sudo user<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+PASSWORD=bigdata<br />
+sudo useradd -c &#8216;BD Analytics&#8217; -p $(openssl passwd -1 $PASSWORD) bda<br />
+sudo usermod -aG sudo bda<br />
+sudo usermod -aG docker bda</p>
+<p>sudo cp -R /home/$(whoami) /home/$(whoami).tmp<br />
+sudo mv /home/$(whoami).tmp /home/bda<br />
+sudo chown bda:bda /home/bda -R</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Enable autologin (bda user)<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>sudo rm /etc/lightdm/lightdm.conf</p>
+<p>echo &#8216;[SeatDefaults]&#8217; | sudo tee -a /etc/lightdm/lightdm.conf &gt; /dev/null<br />
+echo &#8216;autologin-guest=false&#8217; | sudo tee -a /etc/lightdm/lightdm.conf &gt; /dev/null<br />
+echo &#8216;autologin-user=bda&#8217; | sudo tee -a /etc/lightdm/lightdm.conf &gt; /dev/null<br />
+echo &#8216;autologin-user-timeout=0&#8217; | sudo tee -a /etc/lightdm/lightdm.conf &gt; /dev/null<br />
+echo &#8216;autologin-session=lightdm-autologin&#8217; | sudo tee -a /etc/lightdm/lightdm.conf &gt; /dev/null</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="index.html" rel="category tag">Uncategorized</a> on <a href="../../2016/05/05/script/index.html" title="8:11 am" rel="bookmark"><time class="entry-date" datetime="2016-05-05T08:11:24+00:00">May 5, 2016</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="../../author/admin/index.html" title="View all posts by admin" rel="author">admin</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-148" class="post-148 post type-post status-publish format-standard hentry category-uncategorized">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="../../2016/05/03/answers-pig/index.html" rel="bookmark">Answers Pig</a>
+			</h1>
+								</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<ul>
+<li>Filter the speedtest conducted in Barcelona or Madrid. Then list the internet providers working in those cities.</li>
+</ul>
+<div class="entry-content">
+<pre>NeubotTests = LOAD 'NeubotTests' using PigStorage(';') as (
+                  client_address: chararray,
+                  client_country: chararray,
+                  lon: float,
+                  lat: float,
+                  client_provider: chararray,
+                  mlabservername:  chararray,
+                  connect_time:    float,
+                  download_speed:  float,
+                  neubot_version:  float,
+                  platform:        chararray,
+                  remote_address:  chararray,
+                  test_name:       chararray,
+                  timestamp:       long,
+                  upload_speed:    float,
+                  latency:  float,
+                  uuid:     chararray,
+                  asnum:    chararray,
+                  region:   chararray,
+                  city:     chararray,
+                  hour:     int,
+                  month:    int,
+                  year:     int,
+                  weekday:  int,
+                  day:      int,
+                  filedate: chararray
+);
+
+--
+-- A1: Internet Providers in 'Barcelona' or 'Madrid' where speedtests were conducted
+--
+
+SpeedTests = FILTER @ BY (test_name matches '.*speedtest.*');
+
+SpeedTests = FILTER @ BY (
+    city matches '.*Barcelona.*' OR
+    city matches '.*Madrid.*'
+);
+
+Providers = FOREACH @ GENERATE city, client_provider;
+Providers = DISTINCT @;
+
+DUMP @;</pre>
+</div>
+<ul>
+<li>List the names and the IP ranges of the internet providers located in Barcelona. For this you need to use the IPtoNumber user defined function (cf. NeubotTestsUDFs.jar).</li>
+</ul>
+<pre>NeubotTests = LOAD 'NeubotTests' using PigStorage(';') as (
+                  client_address: chararray,
+                  client_country: chararray,
+                  lon: float,
+                  lat: float,
+                  client_provider: chararray,
+                  mlabservername:  chararray,
+                  connect_time:    float,
+                  download_speed:  float,
+                  neubot_version:  float,
+                  platform:        chararray,
+                  remote_address:  chararray,
+                  test_name:       chararray,
+                  timestamp:       long,
+                  upload_speed:    float,
+                  latency:  float,
+                  uuid:     chararray,
+                  asnum:    chararray,
+                  region:   chararray,
+                  city:     chararray,
+                  hour:     int,
+                  month:    int,
+                  year:     int,
+                  weekday:  int,
+                  day:      int,
+                  filedate: chararray
+);
+
+--
+-- A2: Internet Providers in Barcelona and their IP range based on the speedtests observations
+--
+
+SpeedTests = FILTER @ BY (test_name matches '.*speedtest.*');
+
+SpeedTests = FILTER @ BY (
+    city matches '.*Barcelona.*'
+);
+
+Providers = FOREACH @ GENERATE
+    city,
+    client_provider,
+    IPtoNumber(client_address) AS ip
+;
+
+Providers = GROUP @ BY client_provider;
+
+Providers_IP_Range = FOREACH @ GENERATE
+    group,
+    NumberToIP( MIN(Providers.ip) ),
+    NumberToIP( MAX(Providers.ip) )
+;
+
+DUMP @;</pre>
+<ul>
+<li>Group the speedtest based on the user network infrastructure (e.g., 3G/4G vs ADSL). For this you can assume some max bandwidth (e.g., 21Mb/sec for ADSL).</li>
+</ul>
+<pre>NeubotTests = LOAD 'NeubotTests' using PigStorage(';') as (
+                  client_address: chararray,
+                  client_country: chararray,
+                  lon: float,
+                  lat: float,
+                  client_provider: chararray,
+                  mlabservername:  chararray,
+                  connect_time:    float,
+                  download_speed:  float,
+                  neubot_version:  float,
+                  platform:        chararray,
+                  remote_address:  chararray,
+                  test_name:       chararray,
+                  timestamp:       long,
+                  upload_speed:    float,
+                  latency:  float,
+                  uuid:     chararray,
+                  asnum:    chararray,
+                  region:   chararray,
+                  city:     chararray,
+                  hour:     int,
+                  month:    int,
+                  year:     int,
+                  weekday:  int,
+                  day:      int,
+                  filedate: chararray
+);
+
+--
+-- A3: Speedtests (conducted in Barcelona) organized by network type: Mobile vs ADSL
+--
+
+SpeedTests = FILTER @ BY (test_name matches '.*speedtest.*');
+SpeedTests = FILTER @ BY (
+    city matches '.*Barcelona.*'
+);
+
+SPLIT @ INTO
+    Mobile_Tests IF (
+        download_speed &gt; 21000000 -- 21 Mb / sec
+    ),
+
+    ADSL_Tests IF (
+        download_speed &lt;= 21000000 -- 21 Mb / sec
+    )
+;
+
+MobileSpeeds = FOREACH Mobile_Tests GENERATE
+     CEIL(download_speed / 1000000) AS download_speed,
+     'mobile' AS network_type: chararray
+;
+
+ADSLSpeeds = FOREACH ADSL_Tests GENERATE
+     CEIL(download_speed / 1000000) AS download_speed,
+     'adsl' AS network_type: chararray
+;
+
+Speeds = UNION MobileSpeeds, ADSLSpeeds;
+Speeds = GROUP @ BY (download_speed, network_type);
+Speeds = FOREACH @ GENERATE
+     CONCAT( (chararray) group.download_speed, ' mb/sec' ),
+     group.network_type,
+     COUNT(Speeds)
+;
+
+DUMP @;</pre>
+<ul>
+<li>Find the user that realized the maximum number of tests. For this user, produce a table showing the evolution of her/his download/upload speeds.</li>
+</ul>
+<pre>NeubotTests = LOAD 'NeubotTests' using PigStorage(';') as (
+                  client_address: chararray,
+                  client_country: chararray,
+                  lon: float,
+                  lat: float,
+                  client_provider: chararray,
+                  mlabservername:  chararray,
+                  connect_time:    float,
+                  download_speed:  float,
+                  neubot_version:  float,
+                  platform:        chararray,
+                  remote_address:  chararray,
+                  test_name:       chararray,
+                  timestamp:       long,
+                  upload_speed:    float,
+                  latency:  float,
+                  uuid:     chararray,
+                  asnum:    chararray,
+                  region:   chararray,
+                  city:     chararray,
+                  hour:     int,
+                  month:    int,
+                  year:     int,
+                  weekday:  int,
+                  day:      int,
+                  filedate: chararray
+);
+
+--
+-- Determines the user that realized the maximum number of tests and 
+-- obtain his/her download_speed log
+--
+
+Tests = FILTER @ BY (test_name matches '.*speedtest.*');
+
+Tests_In_Barcelona = FILTER @ BY (
+    city matches '.*Barcelona.*'
+);
+
+Tests_Per_User = GROUP Tests_In_Barcelona BY uuid;
+
+Tests_Per_User = FOREACH @ GENERATE
+    group AS uuid,
+    COUNT(Tests_In_Barcelona) AS numberOfTests
+;
+
+MAX_NUM_TESTS = GROUP @ ALL;
+MAX_NUM_TESTS = FOREACH @ GENERATE
+    MAX( Tests_Per_User.numberOfTests) AS numberOfTests
+;
+
+TOP_1_USER = JOIN
+    Tests_Per_User BY numberOfTests,
+    MAX_NUM_TESTS  BY numberOfTests
+;
+
+TOP_1_USER = FOREACH @ GENERATE Tests_Per_User::uuid AS uuid;
+
+TOP_1_USER_TESTS = JOIN
+    Tests BY uuid,
+    TOP_1_USER BY uuid
+;
+
+TOP_1_USER_TESTS = FOREACH @ GENERATE
+    Tests::uuid AS uuid,
+    Tests::city AS city,
+    Tests::timestamp AS timestamp,
+    Tests::download_speed AS download_speed
+;
+
+TOP_1_USER_TESTS = ORDER @ BY timestamp;
+
+STORE @ INTO 'Top_1_User' USING PigStorage(',');</pre>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="index.html" rel="category tag">Uncategorized</a> on <a href="../../2016/05/03/answers-pig/index.html" title="6:59 pm" rel="bookmark"><time class="entry-date" datetime="2016-05-03T18:59:05+00:00">May 3, 2016</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="../../author/admin/index.html" title="View all posts by admin" rel="author">admin</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-144" class="post-144 post type-post status-publish format-standard hentry category-uncategorized">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="../../2016/05/03/answers-couchdb/index.html" rel="bookmark">Answers CouchDB</a>
+			</h1>
+								</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<ul>
+<li>Define a view in MapReduce that contains, for each theatre, the films presented in it. <em><strong>Hint</strong>: You do not need a reduce here.</em></li>
+</ul>
+<pre>function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movieTheater = doc.feed.theaterShowtimes[0].place.theater;
+        var moviesOnShow = doc.feed.theaterShowtimes[0].movieShowtimes;
+
+        var movies = [];
+        for(var i=0; i &lt; moviesOnShow.length; i++) {
+            var movie = moviesOnShow[i].onShow.movie;
+            movies.push(movie.title);
+        } // for
+
+        emit(movieTheater.name, movies);
+    } // if
+} // func
+
+</pre>
+<ul>
+<li>Modify your previous answer and filter the theaters outside Grenoble (e.g., do not include the theatres in Saint Martin d’Hères).</li>
+</ul>
+<pre>function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movieTheater = doc.feed.theaterShowtimes[0].place.theater;
+        var moviesOnShow = doc.feed.theaterShowtimes[0].movieShowtimes;
+
+        var movies = [];
+        if(movieTheater.city == "Grenoble") {
+             for(var i=0; i &lt; moviesOnShow.length; i++) {
+                 var movie = moviesOnShow[i].onShow.movie;
+                 movies.push(movie.title); 
+             } // for
+
+             emit(movieTheater.name, movies);
+
+         } // if
+     } // if
+} // func</pre>
+<div class="entry-content">
+<ul>
+<li>Give the number of films that each theatre is presenting. <em><strong>Hint</strong>: You need a reduce here.</em></li>
+</ul>
+<pre><strong>// Map</strong>
+function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movieTheater = doc.feed.theaterShowtimes[0].place.theater;
+        var moviesOnShow = doc.feed.theaterShowtimes[0].movieShowtimes;
+
+        for(var i=0; i &lt; moviesOnShow.length; i++) {
+            emit(movieTheater.name, 1);
+        } // for
+
+     } // if
+} // func
+
+
+<strong>// Reduce</strong>
+function (key, values) {
+    return sum(values) ;
+}</pre>
+<ul>
+<li>Give the list of films with a press rating higher than 4 stars. <em><strong>Attention</strong>: filter duplicates.</em></li>
+</ul>
+<pre><strong>// Map</strong>
+function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movies = doc.feed.theaterShowtimes[0].movieShowtimes;
+        for(var i=0; i &lt; movies.length; i++) {
+            var movie = movies[i].onShow.movie;
+            if(movie.statistics.pressRating &gt; 4) {
+                emit([movie.title, movie.statistics.pressRating], null);
+            }
+         } // for
+    } // if
+} // func
+
+ 
+<strong>// Reduce</strong>
+function (keys,values) {
+    return null ;
+}</pre>
+<ul>
+<li>Give the list of films presented 2 years ago (10.12.2011), and for each film, the theatre where it was presented and its schedule.</li>
+</ul>
+<pre>function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movieTheater = doc.feed.theaterShowtimes[0].place.theater;
+        var moviesOnShow = doc.feed.theaterShowtimes[0].movieShowtimes; 
+
+        for(var i=0; i &lt; moviesOnShow.length; i++) {
+            var movie = {
+                "title":   moviesOnShow[i].onShow.movie.title,
+                "theater": movieTheater.name,
+                "date":    moviesOnShow[i].scr[0].d,
+                "schedule": []
+            };
+
+            if(movie.date == "2011-12-09") {
+                var showTime = moviesOnShow[i].scr[0].t;
+                for(var j=0; j &lt; showTime.length; j++) {
+                    movie.schedule.push( showTime[j].$ );
+                }
+                emit(movie.title, movie);
+            } // if
+        }  // for
+    }  // if
+}  // func
+
+</pre>
+<ul>
+<li>BONUS! Give the list of films, and for every film, the list of theatres that present it (<em>this question is a challenge but we encourage you to try to solve it</em>).</li>
+</ul>
+<pre><strong>// Map</strong>
+function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movieTheater = doc.feed.theaterShowtimes[0].place.theater;
+        var moviesOnShow = doc.feed.theaterShowtimes[0].movieShowtimes;
+        for(var i=0; i &lt; moviesOnShow.length; i++) {
+            var movie = moviesOnShow[i].onShow.movie;
+            emit(movie.title, movieTheater); 
+        } // for
+    } // if
+} // func
+
+
+<strong>// Reduce</strong>
+function(keys, values) {
+    var movieTheaters = [] ; 
+    for(var i=0; i&lt;values.length; i++) {
+        var theater = values[i].name;
+        if(!contains(movieTheaters, theater)) {
+            movieTheaters.push(theater);
+        }
+    } // for
+    return [ movieTheaters.length, movieTheaters ];
+} // func
+ 
+function contains(array, element) {
+    var isContained = false;
+    for(var i=0; i&lt;array.length; i++) {
+        if(array[i] == element){
+            isContained = true;
+            break;
+        }
+    } // for
+    return isContained;
+} // func</pre>
+</div>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="index.html" rel="category tag">Uncategorized</a> on <a href="../../2016/05/03/answers-couchdb/index.html" title="6:50 pm" rel="bookmark"><time class="entry-date" datetime="2016-05-03T18:50:52+00:00">May 3, 2016</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="../../author/admin/index.html" title="View all posts by admin" rel="author">admin</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+		
+		</div><!-- #content -->
+	</section><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+			<aside id="text-2" class="widget widget_text"><h3 class="widget-title">Lecturer</h3>			<div class="textwidget"><p><b>Javier Espinosa, PhD</b><br />
+<em>javier.espinosa @T imag.fr</em><br />
+Research Fellow, BSC-LAFMIA, Spain</p>
+</div>
+		</aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+									<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+				Proudly powered by WordPress			</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+	<div style="display:none">
+	</div>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2020Julaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/jetpack/modules/wpgroho.js%3Fver=5.3.4'></script>
+<script type='text/javascript' src='../../wp-content/themes/twentytwelve/js/navigation.js%3Fver=20140711'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min.js%3Fver=5.3.4'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-202028.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.3',blog:'106572429',post:'0',tz:'0',srv:'espinosa-oviedo.com'} ]);
+	_stq.push([ 'clickTrackerInit', '106572429', '0' ]);
+</script>
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.459 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2020-07-08 12:55:15 -->
+
+<!-- super cache -->

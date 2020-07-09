@@ -1,0 +1,230 @@
+/* Templates */
+
+body.page-template-bt-no-sidebar-wide .site-content,
+body.page-template-bt-no-sidebar-boxed .site-content { 
+	padding-top: 0em;
+	width: auto;
+	float: none;
+	margin-right: 0;
+}
+
+body.page-template-bt-no-sidebar-bb .entry-header,
+body.page-template-bt-no-sidebar-wide .entry-header,
+body.page-template-bt-no-sidebar-boxed .entry-header { 
+	margin-top: 4em;
+	margin-left: 4em;
+}
+
+body.page-template-bt-no-sidebar-bb .site-footer,
+body.page-template-bt-no-sidebar-wide .site-footer,
+body.page-template-bt-no-sidebar-boxed .site-footer { 
+	margin-top: 0em;
+}
+
+body.page-template-bt-no-sidebar-bb .site-content#content,
+body.page-template-bt-no-sidebar-wide .site-content#content { 
+	padding-top: 0em;
+	padding-bottom: 0em;
+	width: auto;
+	float: none;
+	margin-right: 0;
+}
+
+body.bt-remove-entry-header .page-header,
+body.bt-remove-entry-header .type-page .entry-header  {
+	display: none;
+}
+
+@media screen and (min-width: 48em) {
+	body.page-template-bt-no-sidebar-boxed .site-content .wrap {
+		max-width: 920px;
+	}
+	
+	body.page-template-bt-no-sidebar-wide .panel-content .wrap {
+		max-width: none;
+		padding: 0;
+	}	
+}
+
+.page-template-bt-no-sidebar-wide .site-content .wrap,
+.page-template-bt-no-sidebar-wide .site-content .wrap #primary {
+	max-width: none;
+	padding: 0;
+}
+
+/* Full Screen */
+
+@media screen and (min-width: 48em) {
+	.page-template-bt-no-sidebar-bb .site-header {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+	}
+	.page-template-bt-no-sidebar-bb.page:not(.home) #content {
+		padding: 0;
+	}
+
+	.page-template-bt-no-sidebar-bb .custom-header-media:before {
+		background-image: none;
+	}
+	.page-template-bt-no-sidebar-bb.colors-dark .navigation-top:not(.site-navigation-fixed), 
+	.page-template-bt-no-sidebar-bb.colors-dark .navigation-top:not(.site-navigation-fixed) .main-navigation .menu-main-menu-container > ul,
+	.page-template-bt-no-sidebar-bb  .navigation-top:not(.site-navigation-fixed) {
+		background-color: transparent;
+	}
+
+	.page-template-bt-no-sidebar-bb.colors-dark .navigation-top,
+	.page-template-bt-no-sidebar-bb .navigation-top:not(.site-navigation-fixed) {
+		border-color: transparent;
+	}
+}
+
+.page-template-bt-no-sidebar-bb .site-content .wrap,
+.page-template-bt-no-sidebar-bb .site-content .wrap #primary {
+	max-width: none;
+	padding: 0;
+}
+
+
+/* Remove default home page screen */
+
+.bt-remove-home-fullscreen.has-header-image.twentyseventeen-front-page .custom-header, 
+.bt-remove-home-fullscreen.has-header-video.twentyseventeen-front-page .custom-header, 
+.bt-remove-home-fullscreen.has-header-image.home.blog .custom-header, 
+.bt-remove-home-fullscreen.has-header-video.home.blog .custom-header {
+	display: block;
+	height: auto;
+}
+
+@media screen and (min-width: 48em) {
+	.bt-remove-home-fullscreen.twentyseventeen-front-page.has-header-image .custom-header-media, 
+	.bt-remove-home-fullscreen.twentyseventeen-front-page.has-header-video .custom-header-media, 
+	.bt-remove-home-fullscreen.home.blog.has-header-image .custom-header-media, 
+	.bt-remove-home-fullscreen.home.blog.has-header-video .custom-header-media {
+		height: auto;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	.bt-remove-home-fullscreen.twentyseventeen-front-page.has-header-image .custom-header-media:before, 
+	.bt-remove-home-fullscreen.twentyseventeen-front-page.has-header-video .custom-header-media:before, 
+	.bt-remove-home-fullscreen.home.blog.has-header-image .custom-header-media:before, 
+	.bt-remove-home-fullscreen.home.blog.has-header-video .custom-header-media:before {
+		height: 100%;
+	}
+
+	.bt-remove-home-fullscreen.twentyseventeen-front-page.has-header-image .custom-header-media img, 
+	.bt-remove-home-fullscreen.twentyseventeen-front-page.has-header-video .custom-header-media img, 
+	.bt-remove-home-fullscreen.home.blog.has-header-image .custom-header-media img, 
+	.bt-remove-home-fullscreen.home.blog.has-header-video .custom-header-media img {
+		object-fit: cover;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		transform: translate3d(0,-50%,0);
+	}
+
+	.bt-remove-home-fullscreen.has-header-image.twentyseventeen-front-page .site-branding, 
+	.bt-remove-home-fullscreen.has-header-video.twentyseventeen-front-page .site-branding, 
+	.bt-remove-home-fullscreen.has-header-image.home.blog .site-branding, 
+	.bt-remove-home-fullscreen.has-header-video.home.blog .site-branding {
+	    bottom: auto;
+	    display: block;
+	    left: auto;
+	    height: auto;
+	    padding-top: 0;
+	    position: relative;
+	    width: auto;
+	    z-index: 2;
+	}
+}
+
+@media screen and (min-width: 30em) {
+	.bt-remove-home-fullscreen.has-header-image.twentyseventeen-front-page .site-branding, 
+	.bt-remove-home-fullscreen.has-header-video.twentyseventeen-front-page .site-branding, 
+	.bt-remove-home-fullscreen.has-header-image.home.blog .site-branding, 
+	.bt-remove-home-fullscreen.has-header-video.home.blog .site-branding {
+	    padding: 3em 0;
+	}
+}
+
+/* Central menu */
+
+@media screen and (min-width: 48em) {
+	body.bt-menu-center .main-navigation > div > ul {
+		text-align: center;
+	}
+	body.bt-menu-center .site-branding .wrap {
+		text-align: center;
+	}
+}
+
+@media (max-width: 48em) {
+	body.bt-menu-center .main-navigation ul {
+		text-align: center;
+	}
+	body.bt-menu-center .main-navigation ul ul {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	body.bt-menu-center .custom-logo-link img {
+	    display: inline-block;
+	    width: auto;
+	    margin: 0 auto 1em;
+	}
+
+	body.bt-menu-center .site-branding,
+	body.bt-menu-center .site-branding-text {
+		display: block;
+		text-align: center;
+	}
+
+	body.bt-menu-center.has-header-image .site-branding, 
+	body.bt-menu-center.has-header-image.home.blog .site-branding, 
+	body.bt-menu-center.has-header-video.home.blog .site-branding {
+		display: block;
+	}
+
+}
+
+/* Right menu */
+
+@media screen and (min-width: 48em) {
+	body.bt-menu-right .main-navigation > div > ul {
+		text-align: right;
+	}
+	body.bt-menu-right .site-branding .wrap {
+		text-align: right;
+	}
+}
+
+
+
+
+/* Case to case fixes */
+
+/* Article 'clear' within two columns */
+.twentyseventeen-panel {
+	clear: both;
+	&:after {
+		content: ' ';
+		display: table;
+		width: 100%;
+		clear: both;
+	}
+}
+
+
+/* /Case to case fixes */
+
+
+

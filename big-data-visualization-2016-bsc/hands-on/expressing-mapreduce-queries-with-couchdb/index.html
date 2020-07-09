@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Expressing MapReduce Queries with CouchDB | Big Data Visualization</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="http://espinosa-oviedo.com/big-data-visualization-2016-bsc/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://espinosa-oviedo.com/big-data-visualization-2016-bsc/wp-content/themes/twentytwelve/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel='dns-prefetch' href='http://secure.gravatar.com/' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Big Data Visualization &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Big Data Visualization &raquo; Comments Feed" href="../../comments/feed/index.html" />
+<!-- This site uses the Google Analytics by ExactMetrics plugin v6.0.2 - Using Analytics tracking - https://www.exactmetrics.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var em_version         = '6.0.2';
+	var em_track_user      = true;
+	var em_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-118956641-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+
+	if ( 'undefined' === typeof gaOptout ) {
+		function gaOptout() {
+			__gaTrackerOptout();
+		}
+	}
+	
+	if ( em_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+window.ga = __gaTracker;		__gaTracker('create', 'UA-118956641-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('send','pageview');
+		__gaTracker( function() { window.ga = __gaTracker; } );
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + em_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+			window.ga = __gaTracker;		})();
+		}
+</script>
+<!-- / Google Analytics by ExactMetrics -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/espinosa-oviedo.com\/big-data-visualization-2016-bsc\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.4"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='../../wp-includes/css/dist/block-library/style.min.css%3Fver=5.3.4.css' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='wp-block-library-theme-css'  href='../../wp-includes/css/dist/block-library/theme.min.css%3Fver=5.3.4.css' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-style-css'  href='../../wp-content/themes/twentytwelve/style.css%3Fver=5.3.4.css' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-block-style-css'  href='../../wp-content/themes/twentytwelve/css/blocks.css%3Fver=20181230.css' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='http://espinosa-oviedo.com/big-data-visualization-2016-bsc/wp-content/themes/twentytwelve/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='bt_2017-css'  href='../../wp-content/plugins/customize-twenty-seventeen/style.css%3Fver=5.3.4.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='../../wp-content/plugins/jetpack/css/jetpack.css%3Fver=8.3.css' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"zip,mp3,mpeg,pdf,docx,pptx,xlsx,rar","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"http:\/\/espinosa-oviedo.com\/big-data-visualization-2016-bsc","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/google-analytics-dashboard-for-wp/assets/js/frontend.min.js%3Fver=6.0.2'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery.js%3Fver=1.12.4-wp'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min.js%3Fver=1.4.1'></script>
+<script type='text/javascript' src='../../wp-content/plugins/customize-twenty-seventeen/script.js%3Fver=5.3.4'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc.php%3Frsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.3.4" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='https://wp.me/P7dam9-1n' />
+<link rel="alternate" type="application/json+oembed" href="../../wp-json/oembed/1.0/embed%3Furl=http:%252F%252Fespinosa-oviedo.com%252Fbig-data-visualization-2016-bsc%252Fhands-on%252Fexpressing-mapreduce-queries-with-couchdb%252F" />
+<link rel="alternate" type="text/xml+oembed" href="../../wp-json/oembed/1.0/embed%3Furl=http:%252F%252Fespinosa-oviedo.com%252Fbig-data-visualization-2016-bsc%252Fhands-on%252Fexpressing-mapreduce-queries-with-couchdb%252F&amp;format=xml" />
+
+<link rel='dns-prefetch' href='http://v0.wordpress.com/'/>
+<style type='text/css'>img#wpstats{display:none}</style>
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Expressing MapReduce Queries with CouchDB" />
+<meta property="og:url" content="http://espinosa-oviedo.com/big-data-visualization-2016-bsc/hands-on/expressing-mapreduce-queries-with-couchdb/" />
+<meta property="og:description" content="Objective The objective of this exercise is to learn to query data collections using the map-reduce programming model. For this purpose you will use CouchDB, a NoSQL document oriented database wher…" />
+<meta property="article:published_time" content="2016-05-02T21:51:45+00:00" />
+<meta property="article:modified_time" content="2016-05-03T20:54:10+00:00" />
+<meta property="og:site_name" content="Big Data Visualization" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:text:title" content="Expressing MapReduce Queries with CouchDB" />
+<meta name="twitter:card" content="summary" />
+
+<!-- End Jetpack Open Graph Tags -->
+</head>
+
+<body class="page-template-default page page-id-85 page-child parent-pageid-23 wp-embed-responsive custom-font-enabled single-author">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+		<hgroup>
+			<h1 class="site-title"><a href="../../../big-data-visualization-2016-bsc.html" title="Big Data Visualization" rel="home">Big Data Visualization</a></h1>
+			<h2 class="site-description">Tools and techniques for exploring data</h2>
+		</hgroup>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle">Menu</button>
+			<a class="assistive-text" href="index.html#content" title="Skip to content">Skip to content</a>
+			<div class="menu-menu-container"><ul id="menu-menu" class="nav-menu"><li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-13"><a href="../../../big-data-visualization-2016-bsc.html">Description</a></li>
+<li id="menu-item-225" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-225"><a href="../../objectives/index.html">Objectives</a></li>
+<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a href="../../content/index.html">Content</a></li>
+<li id="menu-item-158" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-158"><a href="../index.html">Hands On</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12"><a href="../../bibliography/index.html">Bibliography</a></li>
+</ul></div>		</nav><!-- #site-navigation -->
+
+			</header><!-- #masthead -->
+
+	<div id="main" class="wrapper">
+
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+							
+	<article id="post-85" class="post-85 page type-page status-publish hentry">
+		<header class="entry-header">
+													<h1 class="entry-title">Expressing MapReduce Queries with CouchDB</h1>
+		</header>
+
+		<div class="entry-content">
+			<h3>Objective</h3>
+<p>The objective of this exercise is to learn to query data collections using the <a href="https://en.wikipedia.org/wiki/MapReduce">map-reduce programming model</a>. For this purpose you will use <strong>CouchDB</strong>, a <a href="https://en.wikipedia.org/wiki/NoSQL">NoSQL</a> <a href="https://en.wikipedia.org/wiki/Document-oriented_database">document oriented database</a> where data is stored/retrieved as <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> <em>documents</em>.</p>
+<h3>Requirements</h3>
+<ul>
+<li><a href="http://couchdb.apache.org/">CouchDB</a></li>
+<li><a href="https://www.dropbox.com/s/ze6kfy6avtvn5kj/Allocine.zip?dl=0">Allocine Data Collection</a></li>
+</ul>
+<h3>CouchDB in a nutshell</h3>
+<p>CouchDB is a NoSQL database that completely embraces the web:</p>
+<ul>
+<li>Data is stored as JSON documents.</li>
+<li>Documents are created and accessed via HTTP (i.e., using a browser).</li>
+<li>Queries are expressed as Javascript map-reduce functions.</li>
+</ul>
+<p>The following instructions illustrate how to create and populate a database in CouchDB using data coming from the <a href="http://www.deezer.com">Deezer</a>&#8216; music catalogue.</p>
+<h4>Create and populate a database</h4>
+<ul>
+<li><strong>Create</strong> the <em>deezer</em> <strong>database</strong>:</li>
+</ul>
+<pre># Assuming CouchDB default address (http://localhost:5984)
+curl -X PUT <a href="http://localhost:5984/_utils">http://localhost:5984/deezer</a></pre>
+<ul>
+<li>Download <a href="http://www.deezer.com/artist/705">Muse</a><strong>&#8216;</strong> <em>albums</em><strong> </strong>and <em>similar artists</em>:</li>
+</ul>
+<pre>curl -X GET <a href="http://api.deezer.com/artist/705/albums">http://api.deezer.com/artist/705/albums</a> &gt; MuseAlbums.json
+curl -X GET <a href="http://api.deezer.com/artist/705/related">http://api.deezer.com/artist/705/related</a> &gt; MuseRelatedArtists.json
+
+# Verify the existence of the files
+ls *.json</pre>
+<ul>
+<li><strong>Populate</strong> the <em>deezer</em> <strong>database </strong>with the retrieved data:</li>
+</ul>
+<pre>curl -X PUT <a href="http://localhost:5984/_utils/database.html?deezer">http://localhost:5984/deezer/muse_albums</a> --upload-file "MuseAlbums.json"
+curl -X PUT <a href="http://localhost:5984/_utils/database.html?deezer">http://localhost:5984/deezer/muse_related_artists</a> --upload-file "MuseRelatedArtists.json"</pre>
+<ul>
+<li><strong>Verify</strong> the content of the database:</li>
+</ul>
+<pre>curl -v <a href="http://localhost:5984/deezer/muse_albums"><em>http://localhost:5984/deezer/muse_albums</em></a>
+curl -v <em><a href="http://localhost:5984/deezer/muse_related_artists">http://localhost:5984/deezer/muse_related_artists</a></em></pre>
+<ul>
+<li><strong>Access</strong> and observe the database <em>deezer</em> on <strong>Fouton </strong>(CouchDB web user interface):</li>
+</ul>
+<pre><a href="http://127.0.0.1:5984/_utils/index.html">http://127.0.0.1:5984/_utils/index.html</a></pre>
+<h4>Querying the database</h4>
+<p>Queries are defined in <a href="http://127.0.0.1:5984/_utils/database.html?deezer/_temp_view">Futon</a> as <em>temporal views </em>composed of a map and (optionally) a reduce function. For instance:</p>
+<ul>
+<li>Retrieve the <em>name</em> and the<em> web page</em> of the groups that are similar to the rock band Muse.</li>
+</ul>
+<pre><strong>// Map</strong> 
+function(doc) { 
+    var artists = doc.data; 
+    if(doc._id == "muse_related_artists") {
+        for(var i in artists) {
+            emit(artists[i].name, artists[i].link);
+        }
+    } 
+}</pre>
+<ul>
+<li>Compute the total number of the albums produced by the rock band Muse —use the <em>reduce check button</em> (see <a href="../../wp-content/uploads/sites/12/2016/05/Reduce-Check-Button-e1462270308174.png">figure</a>). If it does not appear refresh the page.</li>
+</ul>
+<pre><strong>// Map</strong>
+function(doc) {
+     var artists = doc.data;
+     if(doc._id == "muse_related_artists") {
+        for(var i in artists) {
+            emit('muse_albums', 1);
+        }
+    } 
+}
+
+<strong>// Reduce</strong>
+function(keys, values) {
+    return sum(values);
+}</pre>
+<h3>TODO</h3>
+<p>For this practical work you will use <a href="https://www.dropbox.com/s/ze6kfy6avtvn5kj/Allocine.zip?dl=0">Allocine Data Collection</a>, which contains JSON documents with information about the films presented in 2011 in Grenoble (cf. <a href="http://allocine.fr/">allocine.fr</a>). Each of these documents contain the films presented in a cinema of Grenoble at that time (i.e. there is a file per cinema and a total number of 9).</p>
+<p>The following commands help you creating and populating the <em>allocine</em> database:</p>
+<pre># Create database allocine
+curl -X PUT http://localhost:5984/allocine
+
+# Populate database allocine
+curl -T "allocineGrenoble1.txt" http://localhost:5984/allocine/allocineGrenoble1
+curl -T "allocineGrenoble2.txt" http://localhost:5984/allocine/allocineGrenoble2
+curl -T "allocineGrenoble3.txt" http://localhost:5984/allocine/allocineGrenoble3
+curl -T "allocineGrenoble4.txt" http://localhost:5984/allocine/allocineGrenoble4
+curl -T "allocineGrenoble5.txt" http://localhost:5984/allocine/allocineGrenoble5
+curl -T "allocineGrenoble6.txt" http://localhost:5984/allocine/allocineGrenoble6
+curl -T "allocineGrenoble7.txt" http://localhost:5984/allocine/allocineGrenoble7
+curl -T "allocineGrenoble8.txt" http://localhost:5984/allocine/allocineGrenoble8
+curl -T "allocineGrenoble9.txt" http://localhost:5984/allocine/allocineGrenoble9</pre>
+<p>Using the <a href="http://127.0.0.1:5984/_utils/database.html?allocine/_temp_view">allocine database</a> try to answer the following questions. Do not forget to save your queries as: <em><strong>_design</strong>: answers, <strong>view name</strong>: qX</em>.</p>
+<ol>
+<li>Define a view in MapReduce that contains, for each theatre, the films presented in it. <em><strong>Hint</strong>: You do not need a reduce here</em>.</li>
+<li>Modify your previous answer and filter the theaters outside Grenoble (e.g., do not include the theatres in Saint Martin d’Hères).</li>
+<li>Give the number of films that each theatre is presenting. <em><strong>Hint</strong>: You need a reduce here.</em></li>
+<li>Give the list of films with a press rating higher than 4 stars. <em><strong>Attention</strong>: filter duplicates.</em></li>
+<li>Give the list of films presented 2 years ago (10.12.2011), and for each film, the theatre where it was presented and its schedule.</li>
+<li>BONUS! Give the list of films, and for every film, the list of theatres that present it (<em>this question is a challenge but we encourage you to try to solve it</em>).</li>
+</ol>
+<h3>Resources</h3>
+<ul>
+<li><a href="http://guide.couchdb.org">CouchDB: The definitive guide</a></li>
+<li><a href="http://developers.deezer.com/">Deezer RESTful service</a></li>
+<li><a href="../../2016/05/03/answers-couchdb/index.html">Answers</a></li>
+</ul>
+<p>&nbsp;</p>
+					</div><!-- .entry-content -->
+		<footer class="entry-meta">
+					</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+				
+<div id="comments" class="comments-area">
+
+	
+	
+	
+</div><!-- #comments .comments-area -->
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+			<aside id="text-2" class="widget widget_text"><h3 class="widget-title">Lecturer</h3>			<div class="textwidget"><p><b>Javier Espinosa, PhD</b><br />
+<em>javier.espinosa @T imag.fr</em><br />
+Research Fellow, BSC-LAFMIA, Spain</p>
+</div>
+		</aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+									<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+				Proudly powered by WordPress			</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+	<div style="display:none">
+	</div>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2020Julaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/jetpack/modules/wpgroho.js%3Fver=5.3.4'></script>
+<script type='text/javascript' src='../../wp-content/themes/twentytwelve/js/navigation.js%3Fver=20140711'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min.js%3Fver=5.3.4'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-202028.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.3',blog:'106572429',post:'85',tz:'0',srv:'espinosa-oviedo.com'} ]);
+	_stq.push([ 'clickTrackerInit', '106572429', '85' ]);
+</script>
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.461 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2020-07-08 12:54:57 -->
+
+<!-- super cache -->

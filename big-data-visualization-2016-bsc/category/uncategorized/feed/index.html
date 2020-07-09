@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Uncategorized &#8211; Big Data Visualization</title>
+	<atom:link href="http://espinosa-oviedo.com/big-data-visualization-2016-bsc/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
+	<link>http://espinosa-oviedo.com/big-data-visualization-2016-bsc</link>
+	<description>Tools and techniques for exploring data</description>
+	<lastBuildDate>Thu, 05 May 2016 08:11:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.3.4</generator>
+<site xmlns="com-wordpress:feed-additions:1">106572429</site>	<item>
+		<title>Script</title>
+		<link>http://espinosa-oviedo.com/big-data-visualization-2016-bsc/2016/05/05/script/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=script</link>
+				<pubDate>Thu, 05 May 2016 08:11:24 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://espinosa-oviedo.com/big-data-visualization-2016-bsc/?p=197</guid>
+				<description><![CDATA[################################################## ## Developer Tools ################################################## sudo apt-get install -y ssh build-essential git openjdk-7-jdk ################################################## ## Lightning-Server ################################################## #&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;- #&#8211; Docker-Engine: install #&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;- sudo apt-get update sudo apt-get install apt-transport-https ca-certificates sudo apt-key adv &#8211;keyserver hkp://p80.pool.sks-keyservers.net:80 &#8211;recv-keys 58118E89F3A912897C070ADBF76221572C52609D echo &#8220;deb https://apt.dockerproject.org/repo ubuntu-trusty main&#8221; &#124; sudo tee /etc/apt/sources.list.d/docker.list &#62; /dev/null sudo apt-get update sudo apt-get install -y [&#8230;]]]></description>
+								<content:encoded><![CDATA[<p>##################################################<br />
+## Developer Tools<br />
+##################################################</p>
+<p>sudo apt-get install -y ssh build-essential git openjdk-7-jdk</p>
+<p>##################################################<br />
+## Lightning-Server<br />
+##################################################<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Docker-Engine: install<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+sudo apt-get update<br />
+sudo apt-get install apt-transport-https ca-certificates</p>
+<p>sudo apt-key adv &#8211;keyserver hkp://p80.pool.sks-keyservers.net:80 &#8211;recv-keys 58118E89F3A912897C070ADBF76221572C52609D<br />
+echo &#8220;deb https://apt.dockerproject.org/repo ubuntu-trusty main&#8221; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</p>
+<p>sudo apt-get update<br />
+sudo apt-get install -y docker-engine<br />
+sudo apt-get -y autoremove</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Docker-Engine: config &amp; test<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+sudo usermod -aG docker $(whoami)<br />
+sudo docker run hello-world</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Lightning: install<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+sudo docker run -i -t -p 3000:3000 lightningviz/lightning:latest</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Lightning: config run-script<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+echo &#8216;#!/bin/bash&#8217; | sudo tee -a /usr/local/bin/lightning-server &gt; /dev/null<br />
+echo &#8220;docker run -i -t -p 3000:3000 lightningviz/lightning:latest&#8221; | sudo tee -a /usr/local/bin/lightning-server &gt; /dev/null</p>
+<p>sudo chmod +x /usr/local/bin/lightning-server</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Reboot (needed for running docker without sudo)<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+sudo reboot</p>
+<p>##################################################<br />
+## Rapidminer (manual install)<br />
+##################################################</p>
+<p># Download from https://rapidminer.com</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Install (assumes rapidminer-studio is in current directory)<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+sudo mv rapidminer-studio /usr/local/rapidminer-studio</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Config<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+echo &#8216;#!/bin/bash&#8217; | sudo tee -a /usr/local/bin/rapidminer-studio &gt; /dev/null<br />
+echo &#8216;export RAPIDMINER_HOME=/usr/local/rapidminer-studio/&#8217; | sudo tee -a /usr/local/bin/rapidminer-studio &gt; /dev/null<br />
+echo &#8216;/usr/local/rapidminer-studio/RapidMiner-Studio.sh&#8217; | sudo tee -a /usr/local/bin/rapidminer-studio &gt; /dev/null</p>
+<p>sudo chmod +x /usr/local/bin/rapidminer-studio<br />
+##################################################<br />
+## NoSQL Databases<br />
+##################################################<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; MongoDB<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>sudo apt-key adv &#8211;keyserver hkp://keyserver.ubuntu.com:80 &#8211;recv EA312927<br />
+echo &#8220;deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse&#8221; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list<br />
+sudo apt-get update<br />
+sudo apt-get install -y mongodb-org</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; CouchDB<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>sudo apt-get update<br />
+sudo apt-get install software-properties-common -y<br />
+sudo add-apt-repository ppa:couchdb/stable -y<br />
+sudo apt-get update<br />
+sudo apt-get install couchdb -y<br />
+curl localhost:5984</p>
+<p># CouchDB Client 4 Python<br />
+pip install couchdb</p>
+<p>##################################################<br />
+## Pig Latin<br />
+##################################################</p>
+<p># Download from http://pig.apache.org/releases.html</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Install (assumes tar is in current directory)<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>tar -xvf pig-* &amp;&amp; rm pig-*.tar*<br />
+sudo mkdir /usr/local/apache/<br />
+sudo mv pig-* /usr/local/apache/pig</p>
+<p>printf &#8220;\n\n&#8221; | tee -a ~/.bashrc &gt; /dev/null<br />
+echo &#8216;# Apache Pig Latin&#8217; | tee -a ~/.bashrc &gt; /dev/null<br />
+echo &#8216;export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64/&#8217; | tee -a ~/.bashrc &gt; /dev/null<br />
+echo &#8216;export PIG_HOME=/usr/local/apache/pig&#8217; | tee -a ~/.bashrc &gt; /dev/null<br />
+echo &#8216;export PATH=$PATH:$PIG_HOME/bin&#8217; | tee -a ~/.bashrc &gt; /dev/null</p>
+<p>source ~/.bashrc</p>
+<p>##################################################<br />
+## Anaconda<br />
+##################################################</p>
+<p># Download from https://www.continuum.io/downloads<br />
+# &amp; follow instructions</p>
+<p># when installed on different folder<br />
+chmod -R 777 /usr/local/anaconda2/</p>
+<p>##################################################<br />
+## Cesium JS<br />
+##################################################</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Node<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash &#8211;<br />
+sudo apt-get install -y nodejs npm</p>
+<p>sudo ln -s /usr/bin/nodejs /usr/local/bin/node<br />
+sudo ln -s /usr/bin/npm /usr/local/bin/npm<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Cesium &amp; Express<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+npm install cesium<br />
+npm install express compression request yargs<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Google Chrome<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p># Manual install: https://www.google.com/chrome/browser/desktop/<br />
+##################################################<br />
+## VM Customization<br />
+##################################################</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Big Data Analytics (bda) sudo user<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+PASSWORD=bigdata<br />
+sudo useradd -c &#8216;BD Analytics&#8217; -p $(openssl passwd -1 $PASSWORD) bda<br />
+sudo usermod -aG sudo bda<br />
+sudo usermod -aG docker bda</p>
+<p>sudo cp -R /home/$(whoami) /home/$(whoami).tmp<br />
+sudo mv /home/$(whoami).tmp /home/bda<br />
+sudo chown bda:bda /home/bda -R</p>
+<p>#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+#&#8211; Enable autologin (bda user)<br />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>sudo rm /etc/lightdm/lightdm.conf</p>
+<p>echo &#8216;[SeatDefaults]&#8217; | sudo tee -a /etc/lightdm/lightdm.conf &gt; /dev/null<br />
+echo &#8216;autologin-guest=false&#8217; | sudo tee -a /etc/lightdm/lightdm.conf &gt; /dev/null<br />
+echo &#8216;autologin-user=bda&#8217; | sudo tee -a /etc/lightdm/lightdm.conf &gt; /dev/null<br />
+echo &#8216;autologin-user-timeout=0&#8217; | sudo tee -a /etc/lightdm/lightdm.conf &gt; /dev/null<br />
+echo &#8216;autologin-session=lightdm-autologin&#8217; | sudo tee -a /etc/lightdm/lightdm.conf &gt; /dev/null</p>
+]]></content:encoded>
+									<post-id xmlns="com-wordpress:feed-additions:1">197</post-id>	</item>
+		<item>
+		<title>Answers Pig</title>
+		<link>http://espinosa-oviedo.com/big-data-visualization-2016-bsc/2016/05/03/answers-pig/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=answers-pig</link>
+				<pubDate>Tue, 03 May 2016 18:59:05 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://espinosa-oviedo.com/big-data-visualization-2016-bsc/?p=148</guid>
+				<description><![CDATA[Filter the speedtest conducted in Barcelona or Madrid. Then list the internet providers working in those cities. NeubotTests = LOAD 'NeubotTests' using PigStorage(';') as (                   client_address: chararray,                   client_country: chararray,                   lon: float,                   lat: float,                   client_provider: chararray,                   mlabservername:  chararray,                   connect_time:    float,                   download_speed:  float,                   neubot_version:  float,                   platform:        chararray,                   remote_address:  [&#8230;]]]></description>
+								<content:encoded><![CDATA[<ul>
+<li>Filter the speedtest conducted in Barcelona or Madrid. Then list the internet providers working in those cities.</li>
+</ul>
+<div class="entry-content">
+<pre>NeubotTests = LOAD 'NeubotTests' using PigStorage(';') as (
+                  client_address: chararray,
+                  client_country: chararray,
+                  lon: float,
+                  lat: float,
+                  client_provider: chararray,
+                  mlabservername:  chararray,
+                  connect_time:    float,
+                  download_speed:  float,
+                  neubot_version:  float,
+                  platform:        chararray,
+                  remote_address:  chararray,
+                  test_name:       chararray,
+                  timestamp:       long,
+                  upload_speed:    float,
+                  latency:  float,
+                  uuid:     chararray,
+                  asnum:    chararray,
+                  region:   chararray,
+                  city:     chararray,
+                  hour:     int,
+                  month:    int,
+                  year:     int,
+                  weekday:  int,
+                  day:      int,
+                  filedate: chararray
+);
+
+--
+-- A1: Internet Providers in 'Barcelona' or 'Madrid' where speedtests were conducted
+--
+
+SpeedTests = FILTER @ BY (test_name matches '.*speedtest.*');
+
+SpeedTests = FILTER @ BY (
+    city matches '.*Barcelona.*' OR
+    city matches '.*Madrid.*'
+);
+
+Providers = FOREACH @ GENERATE city, client_provider;
+Providers = DISTINCT @;
+
+DUMP @;</pre>
+</div>
+<ul>
+<li>List the names and the IP ranges of the internet providers located in Barcelona. For this you need to use the IPtoNumber user defined function (cf. NeubotTestsUDFs.jar).</li>
+</ul>
+<pre>NeubotTests = LOAD 'NeubotTests' using PigStorage(';') as (
+                  client_address: chararray,
+                  client_country: chararray,
+                  lon: float,
+                  lat: float,
+                  client_provider: chararray,
+                  mlabservername:  chararray,
+                  connect_time:    float,
+                  download_speed:  float,
+                  neubot_version:  float,
+                  platform:        chararray,
+                  remote_address:  chararray,
+                  test_name:       chararray,
+                  timestamp:       long,
+                  upload_speed:    float,
+                  latency:  float,
+                  uuid:     chararray,
+                  asnum:    chararray,
+                  region:   chararray,
+                  city:     chararray,
+                  hour:     int,
+                  month:    int,
+                  year:     int,
+                  weekday:  int,
+                  day:      int,
+                  filedate: chararray
+);
+
+--
+-- A2: Internet Providers in Barcelona and their IP range based on the speedtests observations
+--
+
+SpeedTests = FILTER @ BY (test_name matches '.*speedtest.*');
+
+SpeedTests = FILTER @ BY (
+    city matches '.*Barcelona.*'
+);
+
+Providers = FOREACH @ GENERATE
+    city,
+    client_provider,
+    IPtoNumber(client_address) AS ip
+;
+
+Providers = GROUP @ BY client_provider;
+
+Providers_IP_Range = FOREACH @ GENERATE
+    group,
+    NumberToIP( MIN(Providers.ip) ),
+    NumberToIP( MAX(Providers.ip) )
+;
+
+DUMP @;</pre>
+<ul>
+<li>Group the speedtest based on the user network infrastructure (e.g., 3G/4G vs ADSL). For this you can assume some max bandwidth (e.g., 21Mb/sec for ADSL).</li>
+</ul>
+<pre>NeubotTests = LOAD 'NeubotTests' using PigStorage(';') as (
+                  client_address: chararray,
+                  client_country: chararray,
+                  lon: float,
+                  lat: float,
+                  client_provider: chararray,
+                  mlabservername:  chararray,
+                  connect_time:    float,
+                  download_speed:  float,
+                  neubot_version:  float,
+                  platform:        chararray,
+                  remote_address:  chararray,
+                  test_name:       chararray,
+                  timestamp:       long,
+                  upload_speed:    float,
+                  latency:  float,
+                  uuid:     chararray,
+                  asnum:    chararray,
+                  region:   chararray,
+                  city:     chararray,
+                  hour:     int,
+                  month:    int,
+                  year:     int,
+                  weekday:  int,
+                  day:      int,
+                  filedate: chararray
+);
+
+--
+-- A3: Speedtests (conducted in Barcelona) organized by network type: Mobile vs ADSL
+--
+
+SpeedTests = FILTER @ BY (test_name matches '.*speedtest.*');
+SpeedTests = FILTER @ BY (
+    city matches '.*Barcelona.*'
+);
+
+SPLIT @ INTO
+    Mobile_Tests IF (
+        download_speed &gt; 21000000 -- 21 Mb / sec
+    ),
+
+    ADSL_Tests IF (
+        download_speed &lt;= 21000000 -- 21 Mb / sec
+    )
+;
+
+MobileSpeeds = FOREACH Mobile_Tests GENERATE
+     CEIL(download_speed / 1000000) AS download_speed,
+     'mobile' AS network_type: chararray
+;
+
+ADSLSpeeds = FOREACH ADSL_Tests GENERATE
+     CEIL(download_speed / 1000000) AS download_speed,
+     'adsl' AS network_type: chararray
+;
+
+Speeds = UNION MobileSpeeds, ADSLSpeeds;
+Speeds = GROUP @ BY (download_speed, network_type);
+Speeds = FOREACH @ GENERATE
+     CONCAT( (chararray) group.download_speed, ' mb/sec' ),
+     group.network_type,
+     COUNT(Speeds)
+;
+
+DUMP @;</pre>
+<ul>
+<li>Find the user that realized the maximum number of tests. For this user, produce a table showing the evolution of her/his download/upload speeds.</li>
+</ul>
+<pre>NeubotTests = LOAD 'NeubotTests' using PigStorage(';') as (
+                  client_address: chararray,
+                  client_country: chararray,
+                  lon: float,
+                  lat: float,
+                  client_provider: chararray,
+                  mlabservername:  chararray,
+                  connect_time:    float,
+                  download_speed:  float,
+                  neubot_version:  float,
+                  platform:        chararray,
+                  remote_address:  chararray,
+                  test_name:       chararray,
+                  timestamp:       long,
+                  upload_speed:    float,
+                  latency:  float,
+                  uuid:     chararray,
+                  asnum:    chararray,
+                  region:   chararray,
+                  city:     chararray,
+                  hour:     int,
+                  month:    int,
+                  year:     int,
+                  weekday:  int,
+                  day:      int,
+                  filedate: chararray
+);
+
+--
+-- Determines the user that realized the maximum number of tests and 
+-- obtain his/her download_speed log
+--
+
+Tests = FILTER @ BY (test_name matches '.*speedtest.*');
+
+Tests_In_Barcelona = FILTER @ BY (
+    city matches '.*Barcelona.*'
+);
+
+Tests_Per_User = GROUP Tests_In_Barcelona BY uuid;
+
+Tests_Per_User = FOREACH @ GENERATE
+    group AS uuid,
+    COUNT(Tests_In_Barcelona) AS numberOfTests
+;
+
+MAX_NUM_TESTS = GROUP @ ALL;
+MAX_NUM_TESTS = FOREACH @ GENERATE
+    MAX( Tests_Per_User.numberOfTests) AS numberOfTests
+;
+
+TOP_1_USER = JOIN
+    Tests_Per_User BY numberOfTests,
+    MAX_NUM_TESTS  BY numberOfTests
+;
+
+TOP_1_USER = FOREACH @ GENERATE Tests_Per_User::uuid AS uuid;
+
+TOP_1_USER_TESTS = JOIN
+    Tests BY uuid,
+    TOP_1_USER BY uuid
+;
+
+TOP_1_USER_TESTS = FOREACH @ GENERATE
+    Tests::uuid AS uuid,
+    Tests::city AS city,
+    Tests::timestamp AS timestamp,
+    Tests::download_speed AS download_speed
+;
+
+TOP_1_USER_TESTS = ORDER @ BY timestamp;
+
+STORE @ INTO 'Top_1_User' USING PigStorage(',');</pre>
+]]></content:encoded>
+									<post-id xmlns="com-wordpress:feed-additions:1">148</post-id>	</item>
+		<item>
+		<title>Answers CouchDB</title>
+		<link>http://espinosa-oviedo.com/big-data-visualization-2016-bsc/2016/05/03/answers-couchdb/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=answers-couchdb</link>
+				<pubDate>Tue, 03 May 2016 18:50:52 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://espinosa-oviedo.com/big-data-visualization-2016-bsc/?p=144</guid>
+				<description><![CDATA[Define a view in MapReduce that contains, for each theatre, the films presented in it. Hint: You do not need a reduce here. function(doc) { if(doc.feed.theaterShowtimes[0]) {      var movieTheater = doc.feed.theaterShowtimes[0].place.theater;         var moviesOnShow = doc.feed.theaterShowtimes[0].movieShowtimes; var movies = []; for(var i=0; i &#60; moviesOnShow.length; i++) { var movie = moviesOnShow[i].onShow.movie; movies.push(movie.title); } // for         emit(movieTheater.name, [&#8230;]]]></description>
+								<content:encoded><![CDATA[<ul>
+<li>Define a view in MapReduce that contains, for each theatre, the films presented in it. <em><strong>Hint</strong>: You do not need a reduce here.</em></li>
+</ul>
+<pre>function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movieTheater = doc.feed.theaterShowtimes[0].place.theater;
+        var moviesOnShow = doc.feed.theaterShowtimes[0].movieShowtimes;
+
+        var movies = [];
+        for(var i=0; i &lt; moviesOnShow.length; i++) {
+            var movie = moviesOnShow[i].onShow.movie;
+            movies.push(movie.title);
+        } // for
+
+        emit(movieTheater.name, movies);
+    } // if
+} // func
+
+</pre>
+<ul>
+<li>Modify your previous answer and filter the theaters outside Grenoble (e.g., do not include the theatres in Saint Martin d’Hères).</li>
+</ul>
+<pre>function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movieTheater = doc.feed.theaterShowtimes[0].place.theater;
+        var moviesOnShow = doc.feed.theaterShowtimes[0].movieShowtimes;
+
+        var movies = [];
+        if(movieTheater.city == "Grenoble") {
+             for(var i=0; i &lt; moviesOnShow.length; i++) {
+                 var movie = moviesOnShow[i].onShow.movie;
+                 movies.push(movie.title); 
+             } // for
+
+             emit(movieTheater.name, movies);
+
+         } // if
+     } // if
+} // func</pre>
+<div class="entry-content">
+<ul>
+<li>Give the number of films that each theatre is presenting. <em><strong>Hint</strong>: You need a reduce here.</em></li>
+</ul>
+<pre><strong>// Map</strong>
+function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movieTheater = doc.feed.theaterShowtimes[0].place.theater;
+        var moviesOnShow = doc.feed.theaterShowtimes[0].movieShowtimes;
+
+        for(var i=0; i &lt; moviesOnShow.length; i++) {
+            emit(movieTheater.name, 1);
+        } // for
+
+     } // if
+} // func
+
+
+<strong>// Reduce</strong>
+function (key, values) {
+    return sum(values) ;
+}</pre>
+<ul>
+<li>Give the list of films with a press rating higher than 4 stars. <em><strong>Attention</strong>: filter duplicates.</em></li>
+</ul>
+<pre><strong>// Map</strong>
+function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movies = doc.feed.theaterShowtimes[0].movieShowtimes;
+        for(var i=0; i &lt; movies.length; i++) {
+            var movie = movies[i].onShow.movie;
+            if(movie.statistics.pressRating &gt; 4) {
+                emit([movie.title, movie.statistics.pressRating], null);
+            }
+         } // for
+    } // if
+} // func
+
+ 
+<strong>// Reduce</strong>
+function (keys,values) {
+    return null ;
+}</pre>
+<ul>
+<li>Give the list of films presented 2 years ago (10.12.2011), and for each film, the theatre where it was presented and its schedule.</li>
+</ul>
+<pre>function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movieTheater = doc.feed.theaterShowtimes[0].place.theater;
+        var moviesOnShow = doc.feed.theaterShowtimes[0].movieShowtimes; 
+
+        for(var i=0; i &lt; moviesOnShow.length; i++) {
+            var movie = {
+                "title":   moviesOnShow[i].onShow.movie.title,
+                "theater": movieTheater.name,
+                "date":    moviesOnShow[i].scr[0].d,
+                "schedule": []
+            };
+
+            if(movie.date == "2011-12-09") {
+                var showTime = moviesOnShow[i].scr[0].t;
+                for(var j=0; j &lt; showTime.length; j++) {
+                    movie.schedule.push( showTime[j].$ );
+                }
+                emit(movie.title, movie);
+            } // if
+        }  // for
+    }  // if
+}  // func
+
+</pre>
+<ul>
+<li>BONUS! Give the list of films, and for every film, the list of theatres that present it (<em>this question is a challenge but we encourage you to try to solve it</em>).</li>
+</ul>
+<pre><strong>// Map</strong>
+function(doc) {
+    if(doc.feed.theaterShowtimes[0]) {
+        var movieTheater = doc.feed.theaterShowtimes[0].place.theater;
+        var moviesOnShow = doc.feed.theaterShowtimes[0].movieShowtimes;
+        for(var i=0; i &lt; moviesOnShow.length; i++) {
+            var movie = moviesOnShow[i].onShow.movie;
+            emit(movie.title, movieTheater); 
+        } // for
+    } // if
+} // func
+
+
+<strong>// Reduce</strong>
+function(keys, values) {
+    var movieTheaters = [] ; 
+    for(var i=0; i&lt;values.length; i++) {
+        var theater = values[i].name;
+        if(!contains(movieTheaters, theater)) {
+            movieTheaters.push(theater);
+        }
+    } // for
+    return [ movieTheaters.length, movieTheaters ];
+} // func
+ 
+function contains(array, element) {
+    var isContained = false;
+    for(var i=0; i&lt;array.length; i++) {
+        if(array[i] == element){
+            isContained = true;
+            break;
+        }
+    } // for
+    return isContained;
+} // func</pre>
+</div>
+]]></content:encoded>
+									<post-id xmlns="com-wordpress:feed-additions:1">144</post-id>	</item>
+	</channel>
+</rss>
